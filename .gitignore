@@ -35,4 +35,5 @@ Thumbs.db
 
 # Temporary
 *.tmp
-*.temp
+*.temp"apps/web/.next/" 
+"apps/web/node_modules/" 
