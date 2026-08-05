@@ -1,17 +1,17 @@
 {
-  "buildCommand": "cd apps/web && npm install && npm run build",
-  "outputDirectory": "apps/web/.next",
-  "installCommand": "cd apps/web && npm install",
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
   "builds": [
     {
-      "src": "apps/web/package.json",
+      "src": "package.json",
       "use": "@vercel/next"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "apps/web/$1"
+      "dest": "/$1"
     }
   ]
 }
