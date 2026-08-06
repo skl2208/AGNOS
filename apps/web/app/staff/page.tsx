@@ -12,6 +12,7 @@ type FormData = {
   gender: string;
   phoneNumber: string;
   email: string;
+  address: string;
   preferredLanguage: string;
   nationality: string;
   emergencyContactName: string;
@@ -193,6 +194,7 @@ export default function StaffPage() {
                       label="อีเมล"
                       value={selectedData.formData.email || "-"}
                     />
+                    <InfoItem label="ที่อยู่" value={selectedData.formData.address || "-"} />
                     <InfoItem
                       label="ภาษาที่ต้องการ"
                       value={selectedData.formData.preferredLanguage || "-"}

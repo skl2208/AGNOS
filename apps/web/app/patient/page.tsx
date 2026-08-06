@@ -13,6 +13,7 @@ type FormData = {
   gender: string;
   phoneNumber: string;
   email: string;
+  address: string;
   preferredLanguage: string;
   nationality: string;
   emergencyContactName: string;
@@ -31,6 +32,7 @@ export default function PatientPage() {
     gender: "",
     phoneNumber: "",
     email: "",
+    address: "",
     preferredLanguage: "",
     nationality: "",
     emergencyContactName: "",
@@ -111,6 +113,7 @@ export default function PatientPage() {
     if (!formData.phoneNumber.trim())
       newErrors.phoneNumber = "กรุณากรอกเบอร์โทรศัพท์";
     if (!formData.email.trim()) newErrors.email = "กรุณากรอกอีเมล";
+    if (!formData.address.trim()) newErrors.address = "กรุณากรอกที่อยู่";
     if (!formData.preferredLanguage)
       newErrors.preferredLanguage = "กรุณาเลือกภาษาที่ต้องการ";
     if (!formData.nationality.trim())
@@ -318,7 +321,23 @@ export default function PatientPage() {
                 <p className="mt-1 text-sm text-red-500">{errors.email}</p>
               )}
             </div>
-
+            {/* Address */}
+            <div className="md:col-span-2">
+              <label className="mb-1 block text-sm font-medium text-gray-700">
+                ที่อยู่ <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                name="address"
+                value={formData.address}
+                onChange={handleChange}
+                className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                placeholder="บ้านเลขที่ ถนน ตำบล อำเภอ จังหวัด"
+              />
+              {errors.address && (
+                <p className="mt-1 text-sm text-red-500">{errors.address}</p>
+              )}
+            </div>
             {/* Preferred Language */}
             <div>
               <label className="mb-1 block text-sm font-medium text-gray-700">
